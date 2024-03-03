@@ -1,6 +1,7 @@
 import { Counter } from "./components/Counter";
+import { DumpQuotes } from "./components/DumpQuotesPage/DumpQuotes";
 import { FetchData } from "./components/FetchData";
-import { Home } from "./components/Home";
+import { Home } from "./components/HomePage/Home";
 
 const AppRoutes = [
   {
@@ -14,7 +15,11 @@ const AppRoutes = [
   {
     path: '/fetch-data',
     element: <FetchData />
-  }
+    },
+    {
+        path: '/dump-quotes',
+        element: <DumpQuotes />
+    }
 ];
 
 export default AppRoutes;
