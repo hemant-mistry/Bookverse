@@ -1,8 +1,18 @@
+using BookVerse.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+
+//Setting up the SQL database connections
+builder.Services.AddDbContext<DumpDatabaseContext>(options =>
+{
+	options.UseSqlServer("Server=LAPTOP-KESGRPLJ\\SQLEXPRESS; Database=BookverseDB; Trusted_Connection=True; TrustServerCertificate=True;");
+});
+
 
 var app = builder.Build();
 
